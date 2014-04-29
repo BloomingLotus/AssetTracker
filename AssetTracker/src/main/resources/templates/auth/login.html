@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Hello Spring Boot!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" media="all" href="../../static/css/bootstrap.css" th:href="@{/static/css/bootstrap.css}" />
+    
+    <script type="text/javascript" src="../../static/js/jquery-1.11.0.js" th:src="@{/static/js/jquery-1.11.0.js}"></script>
+    <script type="text/javascript" src="../../static/js/bootstrap-3.1.1/bootstrap.js" th:src="@{/static/js/bootstrap-3.1.1/bootstrap.js}"></script>
+</head>
+<body>
+	  <div class="container">
+
+	<form th:action="@{/login}" action="login" method="POST">
+      
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Email address" required="required" autofocus="autofocus" value="user"/>
+        <input type="password"  id="password" name="password" class="form-control" placeholder="Password" required="required" value="user"/>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+</body>
+</html>

@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>bl.backoffice</groupId>
-	<artifactId>Asset</artifactId>
+	<artifactId>AssetTracker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
@@ -14,7 +14,7 @@
 	<properties>
 		<start-class>asset.Application</start-class>
 		<java.version>1.7</java.version>
-		
+		<m2eclipse.wtp.contextRoot>AssetTracker</m2eclipse.wtp.contextRoot>
 	</properties>
 
 	<parent>
@@ -27,12 +27,15 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</exclusion>
-			</exclusions>
+		</dependency>
+		<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    	<artifactId>spring-boot-starter-tomcat</artifactId>
+	    	<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -56,6 +59,10 @@
 		<dependency>
 		    <groupId>com.h2database</groupId>
 		    <artifactId>h2</artifactId>
+		 </dependency>
+		 <dependency>
+		    <groupId>org.thymeleaf.extras</groupId>
+		    <artifactId>thymeleaf-extras-springsecurity3</artifactId>
 		 </dependency>
 	</dependencies>
 

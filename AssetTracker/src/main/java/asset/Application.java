@@ -6,6 +6,13 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @Configuration
 @ComponentScan
@@ -13,9 +20,12 @@ import org.springframework.context.annotation.Configuration;
 public class Application extends SpringBootServletInitializer{
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(applicationClass, args);
     }
 
+    
+    
+    
 	@Override
 	protected SpringApplicationBuilder configure(
 			SpringApplicationBuilder application) {
@@ -23,5 +33,6 @@ public class Application extends SpringBootServletInitializer{
 	}
     
     private static Class<Application> applicationClass = Application.class;
-    
+   
+	
 }
