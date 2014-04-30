@@ -6,7 +6,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebMvcSecurity
@@ -26,12 +25,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/static/**").permitAll()
 				.anyRequest().fullyAuthenticated()
 				.and()
-			.httpBasic()
+			.formLogin()
+				.loginPage("/landing-login").permitAll()
+				.loginProcessingUrl("/login")
+				.defaultSuccessUrl("/test")
 				.and()
-			.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
-//			.formLogin()
-//				.loginPage("/landing-login").permitAll()
-//				.defaultSuccessUrl("/hello/xxx");
+			.logout().logoutUrl("/logout");
+			
 	}
 	
 }
