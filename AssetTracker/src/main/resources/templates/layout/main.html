@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<link rel="shortcut icon" href="../../assets/ico/favicon.ico" />
+
+<title>Dashboard Template for Bootstrap</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../../static/css/bootstrap.min.css"
+	th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet" />
+<link href="../../static/css/dashboard.css"
+	th:href="@{/static/css/dashboard.css}" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<!--     <link href="dashboard.css" rel="stylesheet"> -->
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> 
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}">Asset Tracking</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li th:class="${page.adminNav}? 'active'"><a href="/admin/dashboard" th:href="@{/admin/dashboard}">Admin</a></li>
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Help</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar" id="side-menu">
+				<ul class="nav nav-sidebar"  th:unless="${page.adminNav}">
+					<li id="_sm_dashboard" th:class="${page.smDashboard} ? 'active'"><a href="#" th:href="@{/}">Dashboard</a></li>
+					<li id="_sm_reports" th:class="${page.smReports} ? 'active'"><a href="#" th:href="@{/reports}">Reports</a></li>
+				</ul>
+				<ul class="nav nav-sidebar"  th:unless="${page.adminNav}">
+					<li id="_sm_assetModels" th:class="${page.smAssetModels} ? 'active'">
+						<a href="#" th:href="@{/assetModels}">Asset Models</a>
+					</li>
+					<li id="_sm_assets" th:class="${page.smAssets} ? 'active'">
+						<a href="#" th:href="@{/assets}">Assets</a>
+					</li>
+					<li id="_sm_takeoutAsset" th:class="${page.smCheckoutAsset} ? 'active'">
+						<a href="#" th:href="@{/checkoutAsset}">Check Out Asset</a>
+					</li>
+					<li id="_sm_returnAsset" th:class="${page.smReturnAsset} ? 'active'">
+						<a href="#" th:href="@{/returnAsset}">Return Asset</a>
+					</li>
+				</ul>
+				<ul class="nav nav-sidebar"  th:unless="${page.adminNav}">
+					<li id="_sm_inventory" th:class="${page.smInventory} ? 'active'">
+						<a href="#" th:href="@{/inventory}">Inventory</a>
+					</li>
+					<li id="_sm_takeoutInvetory" th:class="${page.smTakeoutInventory} ? 'active'">
+						<a href="#" th:href="@{/takeoutInventory}">Take Out Inventory</a>
+					</li>
+					<li id="_sm_restockInvetory" th:class="${page.smRestockInventory} ? 'active'">
+						<a href="#" th:href="@{/restockInventory}">Restock Inventory</a>
+					</li>
+				</ul>
+				<ul class="nav nav-sidebar"  th:if="${page.adminNav}">
+					<li id="_sm_admin_dahsboard" th:class="${page.smAdminDashboard} ? 'active'">
+						<a href="#" th:href="@{/admin/dashboard}">Admin Dashboard</a>
+					</li>
+					<li id="_sm_admin_category" th:class="${page.smAdminCategory} ? 'active'">
+						<a href="#" th:href="@{/admin/category}">Category</a>
+					</li>
+					<li id="_sm_admin_brand" th:class="${page.smAdminBrand} ? 'active'">
+						<a href="#" th:href="@{/admin/brand}">Brand</a>
+					</li>
+					<li id="_sm_admin_user" th:class="${page.smAdminUser} ? 'active'">
+						<a href="#" th:href="@{/admin/user}">User</a>
+					</li>
+				</ul>
+			</div>
+			
+			
+			
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+				<div layout:fragment="content">
+					<!-- Content!!! -->
+					<h1 class="page-header">Dashboard</h1>
+
+					
+
+					<!-- content -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script type="text/javascript" 
+		src="../../static/js/jquery-1.11.0.js"
+		th:src="@{/static/js/jquery-1.11.0.js}"></script>
+	<script type="text/javascript"
+		src="../../static/js/bootstrap-3.1.1/bootstrap.js"
+		th:src="@{/static/js/bootstrap-3.1.1/bootstrap.js}"></script>
+</body>
+</html>
