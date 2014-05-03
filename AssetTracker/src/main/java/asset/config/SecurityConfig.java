@@ -23,12 +23,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	    http
 			.authorizeRequests()
 				.antMatchers("/static/**").permitAll()
+				.antMatchers("/landing-login**").permitAll()
 				.anyRequest().fullyAuthenticated()
 				.and()
 			.formLogin()
 				.loginPage("/landing-login").permitAll()
 				.loginProcessingUrl("/login")
-				.defaultSuccessUrl("/test")
+				.defaultSuccessUrl("/")
 				.and()
 			.logout().logoutUrl("/logout");
 			
