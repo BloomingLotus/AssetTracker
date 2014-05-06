@@ -43,7 +43,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li th:class="${page.adminNav}? 'active'"><a href="/admin/dashboard" th:href="@{/admin/dashboard}">Admin</a></li>
+					<li th:class="${webPage.adminNav}? 'active'"><a href="/admin/dashboard" th:href="@{/admin/dashboard}">Admin</a></li>
 					<li>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile <b class="caret"></b></a>
 				          <ul class="dropdown-menu">
@@ -63,46 +63,46 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar" id="side-menu">
-				<ul class="nav nav-sidebar"  th:unless="${page.adminNav}">
-					<li id="_sm_dashboard" th:class="${page.smDashboard} ? 'active'"><a href="#" th:href="@{/}">Dashboard</a></li>
-					<li id="_sm_reports" th:class="${page.smReports} ? 'active'"><a href="#" th:href="@{/reports}">Reports</a></li>
+				<ul class="nav nav-sidebar"  th:unless="${webPage.adminNav}">
+					<li id="_sm_dashboard" th:class="${webPage.smDashboard} ? 'active'"><a href="#" th:href="@{/}">Dashboard</a></li>
+					<li id="_sm_reports" th:class="${webPage.smReports} ? 'active'"><a href="#" th:href="@{/reports}">Reports</a></li>
 				</ul>
-				<ul class="nav nav-sidebar"  th:unless="${page.adminNav}">
-					<li id="_sm_assetModels" th:class="${page.smAssetModels} ? 'active'">
+				<ul class="nav nav-sidebar"  th:unless="${webPage.adminNav}">
+					<li id="_sm_assetModels" th:class="${webPage.smAssetModels} ? 'active'">
 						<a href="#" th:href="@{/assetModels}">Asset Models</a>
 					</li>
-					<li id="_sm_assets" th:class="${page.smAssets} ? 'active'">
+					<li id="_sm_assets" th:class="${webPage.smAssets} ? 'active'">
 						<a href="#" th:href="@{/assets}">Assets</a>
 					</li>
-					<li id="_sm_takeoutAsset" th:class="${page.smCheckoutAsset} ? 'active'">
+					<li id="_sm_takeoutAsset" th:class="${webPage.smCheckoutAsset} ? 'active'">
 						<a href="#" th:href="@{/checkoutAsset}">Check Out Asset</a>
 					</li>
-					<li id="_sm_returnAsset" th:class="${page.smReturnAsset} ? 'active'">
+					<li id="_sm_returnAsset" th:class="${webPage.smReturnAsset} ? 'active'">
 						<a href="#" th:href="@{/returnAsset}">Return Asset</a>
 					</li>
 				</ul>
-				<ul class="nav nav-sidebar"  th:unless="${page.adminNav}">
-					<li id="_sm_inventory" th:class="${page.smInventory} ? 'active'">
+				<ul class="nav nav-sidebar"  th:unless="${webPage.adminNav}">
+					<li id="_sm_inventory" th:class="${webPage.smInventory} ? 'active'">
 						<a href="#" th:href="@{/inventory}">Inventory</a>
 					</li>
-					<li id="_sm_takeoutInvetory" th:class="${page.smTakeoutInventory} ? 'active'">
+					<li id="_sm_takeoutInvetory" th:class="${webPage.smTakeoutInventory} ? 'active'">
 						<a href="#" th:href="@{/takeoutInventory}">Take Out Inventory</a>
 					</li>
-					<li id="_sm_restockInvetory" th:class="${page.smRestockInventory} ? 'active'">
+					<li id="_sm_restockInvetory" th:class="${webPage.smRestockInventory} ? 'active'">
 						<a href="#" th:href="@{/restockInventory}">Restock Inventory</a>
 					</li>
 				</ul>
-				<ul class="nav nav-sidebar"  th:if="${page.adminNav}">
-					<li id="_sm_admin_dahsboard" th:class="${page.smAdminDashboard} ? 'active'">
+				<ul class="nav nav-sidebar"  th:if="${webPage.adminNav}">
+					<li id="_sm_admin_dahsboard" th:class="${webPage.smAdminDashboard} ? 'active'">
 						<a href="#" th:href="@{/admin/dashboard}">Admin Dashboard</a>
 					</li>
-					<li id="_sm_admin_category" th:class="${page.smAdminCategory} ? 'active'">
+					<li id="_sm_admin_category" th:class="${webPage.smAdminCategory} ? 'active'">
 						<a href="#" th:href="@{/admin/category}">Category</a>
 					</li>
-					<li id="_sm_admin_brand" th:class="${page.smAdminBrand} ? 'active'">
+					<li id="_sm_admin_brand" th:class="${webPage.smAdminBrand} ? 'active'">
 						<a href="#" th:href="@{/admin/brand}">Brand</a>
 					</li>
-					<li id="_sm_admin_user" th:class="${page.smAdminUser} ? 'active'">
+					<li id="_sm_admin_user" th:class="${webPage.smAdminUser} ? 'active'">
 						<a href="#" th:href="@{/admin/user}">User</a>
 					</li>
 				</ul>
@@ -114,7 +114,7 @@
 
 				<div layout:fragment="content">
 					<!-- Content!!! -->
-					<h1 class="page-header">Dashboard</h1>
+					<h1 class="pageheader">Dashboard</h1>
 
 					
 
@@ -126,7 +126,7 @@
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
+	<!-- Placed at the end of the document so the webPage. load faster -->
 	<script type="text/javascript" 
 		src="../../static/js/jquery-1.11.0.js"
 		th:src="@{/static/js/jquery-1.11.0.js}"></script>

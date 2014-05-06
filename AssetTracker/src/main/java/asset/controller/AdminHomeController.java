@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import asset.web.ui.Page;
+import asset.web.ui.WebPage;
 
 @Controller
 public class AdminHomeController {
@@ -44,10 +44,10 @@ public class AdminHomeController {
 		return "admin/user";
 	}
 	
-	private Page setupPage(Model model) {
-		Page page = Page.newPage().setAdminNav();
-		model.addAttribute("page", page);
-		return page;
+	private WebPage setupPage(Model model) {
+		WebPage webPage = WebPage.newPage().setAdminNav();
+		model.addAttribute("webPage", webPage);
+		return webPage;
 	}
 	
 }

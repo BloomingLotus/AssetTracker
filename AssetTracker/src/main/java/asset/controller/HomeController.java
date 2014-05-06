@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import asset.web.ui.Page;
+import asset.web.ui.WebPage;
 
 @Controller
 public class HomeController {
@@ -88,10 +88,10 @@ public class HomeController {
 		return "restockInventory";
 	}
 	
-	private Page setupPage(Model model) {
-		Page page = Page.newPage();
-		model.addAttribute("page", page);
-		return page;
+	private WebPage setupPage(Model model) {
+		WebPage webPage = WebPage.newPage();
+		model.addAttribute("webPage", webPage);
+		return webPage;
 	}
 	
 	

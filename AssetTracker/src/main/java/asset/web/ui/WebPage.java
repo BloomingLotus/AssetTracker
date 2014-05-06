@@ -4,16 +4,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Page information should be included in model for every html view render 
+ * WebPage information should be included in model for every html view render 
  * @author det
  *	
  */
-public class Page {
+public class WebPage {
+	//default result per page
+	public static final int RESULT_PER_PAGE = 25;
+
 	/**
 	 * default constructor
 	 * turn every menu to inactive state
 	 */
-	public Page() {
+	public WebPage() {
 		this.siteMenu.put(_SM_DASHBOARD, false);
 		this.siteMenu.put(_SM_REPORTS, false);
 		
@@ -60,7 +63,7 @@ public class Page {
 	/**
 	 * set adminNav to true
 	 */
-	public Page setAdminNav() {
+	public WebPage setAdminNav() {
 		this.adminNav = true;
 		return this;
 	}
@@ -71,63 +74,63 @@ public class Page {
 	 */
 	private Map<String, Boolean> siteMenu = new HashMap<String, Boolean>();
 	
-	public Page setSmDashboard() {
+	public WebPage setSmDashboard() {
 		this.siteMenu.put(_SM_DASHBOARD, true);
 		return this;
 	}
 	public Boolean getSmDashboard(){
 		return this.siteMenu.get(_SM_DASHBOARD);
 	}
-	public Page setSmReports() {
+	public WebPage setSmReports() {
 		this.siteMenu.put(_SM_REPORTS, true);
 		return this;
 	}
 	public Boolean getSmReports(){
 		return this.siteMenu.get(_SM_REPORTS);
 	}
-	public Page setSmAssetModels() {
+	public WebPage setSmAssetModels() {
 		this.siteMenu.put(_SM_ASSETMODELS, true);
 		return this;
 	}
 	public Boolean getSmAssetModels(){
 		return this.siteMenu.get(_SM_ASSETMODELS);
 	}
-	public Page setSmAssets() {
+	public WebPage setSmAssets() {
 		this.siteMenu.put(_SM_ASSETS, true);
 		return this;
 	}
 	public Boolean getSmAssets(){
 		return this.siteMenu.get(_SM_ASSETS);
 	}
-	public Page setSmCheckoutAsset() {
+	public WebPage setSmCheckoutAsset() {
 		this.siteMenu.put(_SM_CHECKOUTASSET, true);
 		return this;
 	}
 	public Boolean getSmCheckoutAsset(){
 		return this.siteMenu.get(_SM_CHECKOUTASSET);
 	}
-	public Page setSmReturnAsset() {
+	public WebPage setSmReturnAsset() {
 		this.siteMenu.put(_SM_RETURNASSET, true);
 		return this;
 	}
 	public Boolean getSmReturnAsset(){
 		return this.siteMenu.get(_SM_RETURNASSET);
 	}
-	public Page setSmInventory() {
+	public WebPage setSmInventory() {
 		this.siteMenu.put(_SM_INVENTORY, true);
 		return this;
 	}
 	public Boolean getSmInventory(){
 		return this.siteMenu.get(_SM_INVENTORY);
 	}
-	public Page setSmTakeoutInventory() {
+	public WebPage setSmTakeoutInventory() {
 		this.siteMenu.put(_SM_TAKEOUTINVENTORY, true);
 		return this;
 	}
 	public Boolean getSmTakeoutInventory(){
 		return this.siteMenu.get(_SM_TAKEOUTINVENTORY);
 	}
-	public Page setSmRestockInventory() {
+	public WebPage setSmRestockInventory() {
 		this.siteMenu.put(_SM_RESTOCKINVENTORY, true);
 		return this;
 	}
@@ -135,7 +138,7 @@ public class Page {
 		return this.siteMenu.get(_SM_RESTOCKINVENTORY);
 	}
 	
-	public Page setSmAdminDashboard() {
+	public WebPage setSmAdminDashboard() {
 		this.siteMenu.put(_SM_ADMIN_DASHBOARD, true);
 		return this;
 	}
@@ -143,7 +146,7 @@ public class Page {
 		return this.siteMenu.get(_SM_ADMIN_DASHBOARD);
 	}
 	
-	public Page setSmAdminCategory() {
+	public WebPage setSmAdminCategory() {
 		this.siteMenu.put(_SM_ADMIN_CATEGORY, true);
 		return this;
 	}
@@ -151,14 +154,14 @@ public class Page {
 		return this.siteMenu.get(_SM_ADMIN_CATEGORY);
 	}
 
-	public Page setSmAdminBrand() {
+	public WebPage setSmAdminBrand() {
 		this.siteMenu.put(_SM_ADMIN_BRAND, true);
 		return this;
 	}
 	public Boolean getSmAdminBrand(){
 		return this.siteMenu.get(_SM_ADMIN_BRAND);
 	}
-	public Page setSmAdminUser() {
+	public WebPage setSmAdminUser() {
 		this.siteMenu.put(_SM_ADMIN_USER, true);
 		return this;
 	}
@@ -166,12 +169,12 @@ public class Page {
 		return this.siteMenu.get(_SM_ADMIN_USER);
 	}
 	
-	/** default Page factory
+	/** default WebPage factory
 	 * 
 	 * @return
 	 */
-	public static Page newPage(){
-		return new Page();
+	public static WebPage newPage(){
+		return new WebPage();
 	}
 	
 }
